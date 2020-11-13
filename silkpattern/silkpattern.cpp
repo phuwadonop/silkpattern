@@ -1,6 +1,9 @@
 #include<iostream>
 
 using namespace std;
+
+char pattern[50000][71];
+
 void sol(int, int*);
 
 int main() {
@@ -13,11 +16,20 @@ int main() {
     int* roll = &rollOutput;
 
     sol(N,roll);
+
+    for (int i = 1; i <= rollOutput; i++)
+    {
+        for (int j = 1; j <= 70; j++)
+        {
+            cout << pattern[i][j];
+        }
+        cout << endl;
+    }
     
 }
 void sol(int N, int* rollOutput)
 {
-    char pattern[5000][71];
+    
 
     for (int i = 1; i <= N; i++)
     {
@@ -41,13 +53,5 @@ void sol(int N, int* rollOutput)
             pattern[P][j] = 'x';
         }
 
-    }
-    for (int i = 1; i <= *rollOutput; i++)
-    {
-        for (int j = 1; j <= 70; j++)
-        {
-            cout << pattern[i][j];
-        }
-        cout << endl;
     }
 }
